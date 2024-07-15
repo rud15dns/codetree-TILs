@@ -11,7 +11,7 @@ start_dir = 0
 dxs = [1, 0, -1, 0]
 dys = [0, 1, 0, -1]
 def inrange(x, y):
-    return 0 <= x and x < n and 0 <= y and y < n
+    return 0 <= x and x < n and 0 <= y and y < m
 
 
 arr[x][y] = 1
@@ -23,7 +23,7 @@ for i in range(2, n * m + 1):
     
     x = x + dxs[start_dir]
     y = y + dys[start_dir]
-    
+    #print(x, y)
     arr[x][y] = i
     
 
