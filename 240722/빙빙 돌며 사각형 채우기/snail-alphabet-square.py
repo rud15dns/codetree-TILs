@@ -26,7 +26,7 @@ for i in range(1, n * m):
     x = x + dx[start_num]
     y = y + dy[start_num]
 
-    arr[x][y] = chr(ord('A') + (i % 24))
+    arr[x][y] = chr(ord('A') + (i % 26))
 
 for i in range(n):
     for j in range(m):
