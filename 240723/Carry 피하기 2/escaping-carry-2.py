@@ -5,7 +5,6 @@ arr = [
     for _ in range(n)
 ]
 
-result = -1
 
 def carry(a, b, c):
     while True:
@@ -26,7 +25,7 @@ def carry(a, b, c):
         c = c // 10
 
 
-max_sum = 0
+max_sum = -1
 for i in range(n):
     for j in range(i + 1, n):
         for k in range(j + 1, n):
