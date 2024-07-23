@@ -9,27 +9,27 @@ def in_range(x, y):
 
 def down(x, y, stand):
     for i in range(5):
-        if stand != arr[x + i][y] or in_range(x + i, y) == False:
+        if not in_range(x + i, y) or stand != arr[x + i][y]:
             return 0, 0, False
     return x + 2, y, True
 
 
 def left(x, y, stand):
     for i in range(5):
-        if stand != arr[x][y + i] or in_range(x, y + i) == False:
+        if not in_range(x, y + i) or stand != arr[x][y + i]:
             return 0, 0, False
     return x, y + 2, True
 
 
 def diagonal_left(x, y, stand):
     for i in range(5):
-        if stand != arr[x + i][y - i] or in_range(x + i, y - i) == False:
+        if not in_range(x + i, y - i) or stand != arr[x + i][y - i]:
             return 0,0,False
     return x + 2, y - 2, True
 
 def diagonal_right(x, y, stand):
     for i in range(5):
-        if stand != arr[x + i][y + i] or in_range(x + i, y + i) == False:
+        if not in_range(x + i, y + i) or stand != arr[x + i][y + i]:
             return 0, 0, False
     return x + 2, y + 2, True
 
