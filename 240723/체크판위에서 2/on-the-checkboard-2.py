@@ -6,8 +6,12 @@ arr = [
 
 x, y = 0, 0
 stand = arr[x][y]
+last = arr[r-1][c-1]
 cnt = 0
+
 for i in range(1, r - 1):
+    if last == stand:
+        break
     for j in range(1, c - 1):
         if arr[i][j] != stand:
             for k in range(i + 1, r - 1):
