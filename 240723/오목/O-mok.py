@@ -58,3 +58,6 @@ for i in range(19):
         print(stand)
         print(x + 1, y + 1)
         break
+
+if not result:
+    print(0)
