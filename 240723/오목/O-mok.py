@@ -51,7 +51,7 @@ for i in range(19):
         
         if result:
             break
-        print(i, j)
+        #print(i, j)
         
 
     if result:
