@@ -21,6 +21,9 @@ for i in range(n):
                 elif i == k:
                     continue
                 
+                if not in_range(k, l_m + 2):
+                    continue
+
                 #print(i, j, i, j+1, i, j + 2, '\t', k, l_m, k, l_m+1, k, l_m +2)
                 max_sum = max(max_sum, a[i][j] + a[i][j + 1] + a[i][j + 2] + a[k][l_m] + a[k][l_m + 1] + a[k][l_m + 2])
 
