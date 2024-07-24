@@ -31,7 +31,9 @@ for i in range(n):
                     break
                 if arr[nx][ny] != "E":
                     break
-                
+                if curt == 3:
+                    break
+
                 curt += 1
                 curx = nx
                 cury = ny
