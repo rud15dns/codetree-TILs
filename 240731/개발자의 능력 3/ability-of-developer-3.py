@@ -4,8 +4,8 @@ n = 6
 arr = list(map(int, input().split()))
 
 
-def get_diff(i, j):
-    sum1 = arr[i] + arr[j]
+def get_diff(i, j, k):
+    sum1 = arr[i] + arr[j] + arr[k]
     sum2 = sum(arr) - sum1
     
     return abs(sum1 - sum2)
@@ -13,6 +13,7 @@ def get_diff(i, j):
 
 for i in range(n):
     for j in range(i + 1, n):
-        min_diff = min(min_diff, get_diff(i, j))
+        for k in range(j + 1, n):
+            min_diff = min(min_diff, get_diff(i, j, k))
 
 print(min_diff)
