@@ -10,11 +10,11 @@ for i in range(n):
     else:
         arr[int(num)] = 2
 
-print(arr[:17])
+#print(arr[:17])
 max_cnt = 0
 for i in range(1, MAX_NUM + 1 - k):
     num_cnt = 0
-    for j in range(i, i + k):
+    for j in range(i, i + k + 1):
         num_cnt += arr[j]
     
     max_cnt = max(num_cnt, max_cnt)
