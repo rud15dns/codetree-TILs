@@ -26,4 +26,7 @@ for i in range(n):
                 continue
             sum_diff = min(sum_diff, abs(max_sum - min_sum))
 
-print(sum_diff)
+if sum_diff == sys.maxsize:
+    print(-1)
+else:
+    print(sum_diff)
