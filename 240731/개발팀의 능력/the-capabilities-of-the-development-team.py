@@ -9,10 +9,12 @@ def sum_op(i, j, k):
     sum2 = arr[j] + arr[k]
     sum3 = sum(arr) - (sum1 + sum2)
 
-    if (sum1 == sum2 or sum2 == sum3 or sum1 == sum3):
-        return -1, -1
     
-    return max(sum1, sum2, sum3), min(sum1, sum2, sum3)
+    if (sum1 == sum2) or (sum2 == sum3) or (sum1 == sum3):
+        return -1
+
+    #print(i, j,k, sum1, sum2, sum3, "\t", max(sum1, sum2, sum3), min(sum1, sum2, sum3))
+    return max(sum1, sum2, sum3) - min(sum1, sum2, sum3)
 
 
 for i in range(n):
@@ -21,10 +23,12 @@ for i in range(n):
             if k == i or k == j:
                 continue
             
-            max_sum, min_sum = sum_op(i, j, k)
-            if max_sum < 0 or min_sum < 0:
+            min_sum = sum_op(k, i, j)
+            if min_sum < 0:
                 continue
-            sum_diff = min(sum_diff, abs(max_sum - min_sum))
+                
+            sum_diff = min(sum_diff, min_sum)
+            #print(i, j, k, sum_diff)
 
 if sum_diff == sys.maxsize:
     print(-1)
