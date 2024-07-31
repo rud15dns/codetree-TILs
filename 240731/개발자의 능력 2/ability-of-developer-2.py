@@ -15,11 +15,12 @@ def sum_op(i, j, k, l):
 for i in range(n):
     for j in range(i + 1, n):
         for k in range(n):
-            if k != i:
+            if k != i and k != j:
                 for l in range(k + 1, n):
-                    if l != j:
+                    if l != j and l != i:
                         max_sum, min_sum = sum_op(i, j, k, l)
                         
+                        #print(arr[i], arr[j], arr[k], arr[l])
                         sum_diff = min(abs(max_sum - min_sum), sum_diff)
 
 print(sum_diff)
