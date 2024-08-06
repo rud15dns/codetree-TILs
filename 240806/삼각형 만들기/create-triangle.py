@@ -36,7 +36,7 @@ def triangle(i, j, k):
             return abs(y2 - y1) * abs(x2 - x3)
         if x3 == x2:
             return abs(y2 - y3) * abs(x2 - x1)
-
+    return -1
 
 for i in range(n):
     for j in range(i + 1, n):
