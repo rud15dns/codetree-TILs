@@ -1,4 +1,3 @@
-#x1은 본인이 작은데, x2가 다른 선분이 작다면 -> 무조건 겹침.
 n = int(input())
 points = [
     tuple(map(int, input().split()))
@@ -10,18 +9,17 @@ cnt = 0
 
 for i in range(n):
     x1, x2 = sorted_points[i]
-    duplicate= False
+    duplicate = False
     for j in range(n):
         if i == j:
             continue
         xx1, xx2 = sorted_points[j]
 
-        if (x1 < xx1 and xx1 < xx2 and xx2 < x2) or (xx1 < x1 and x1 < x2 and x2 < xx2) or (x2 < xx2 and xx2 < xx1 and xx1 < x1) or (xx2 < x2 and x2 < x1 and x1 < xx1):
+        # 겹치는 경우를 판별
+        if not (x2 < xx1 or xx2 < x1):
             duplicate = True
-        if (x2 < xx1 and xx1 < x1 and x1 < xx2) or (x1 < xx2 and xx2 < x2 and x2 < xx1) or (xx1 < x2 and x2 < xx2 and xx2 < x1) or (x2 < xx1 and xx1 < xx2 and xx2 < x1):
-            duplicate = True
+            break  # 이미 겹치는 선분을 찾았으므로 더 이상 검사할 필요 없음
 
-        #print(x1, x2, xx1, xx2, duplicate)
     if duplicate:
         cnt += 1
 
