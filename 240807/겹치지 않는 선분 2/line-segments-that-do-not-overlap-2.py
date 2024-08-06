@@ -16,11 +16,12 @@ for i in range(n):
             continue
         xx1, xx2 = sorted_points[j]
 
-        if x1 < xx1 and x2 > xx2:
+        if (x1 < xx1 and xx1 < xx2 and xx2 < x2) or (xx1 < x1 and x1 < x2 and x2 < xx2) or (x2 < xx2 and xx2 < xx1 and xx1 < x1) or (xx2 < x2 and x2 < x1 and x1 < xx1):
             duplicate = True
-        if xx1 < x1 and xx2 > x1:
+        if (x2 < xx1 and xx1 < x1 and x1 < xx2) or (x1 < xx2 and xx2 < x2 and x2 < xx1) or (xx1 < x2 and x2 < xx2 and xx2 < x1) or (x2 < xx1 and xx1 < xx2 and xx2 < x1):
             duplicate = True
-        
+
+        #print(x1, x2, xx1, xx2, duplicate)
     if duplicate:
         cnt += 1
 
