@@ -47,3 +47,18 @@ for i in range(n):
             #print(max_area)
 
 print(max_area)
+
+##어차피 세개 다 같으면 max값이 될 수 없음을 이용(해설 참고)
+#def area(x1, y1, x2, y2, x3, y3):
+#    return abs((x1 * y2 + x2 * y3 + x3 * y1) - (x2 * y1 + x3 * y2 + x1 * y3))
+
+#for i in range(n):
+#    for j in range(i + 1, n):
+#        for k in range(j + 1, n):
+#            x1, y1 = arr[i]
+#            x2, y2 = arr[j]
+#            x3, y3 = arr[k]
+            #처음에는 꼭 두개가 같아야 하는 시나리오가 있다고 생각하였으나.
+            # 두 가지 조건 중에 하나씩 하나씩만 만족해도 무조건 최소 직각삼각형이 발생할 수밖에 없음.
+#            if (x1 == x2 or x2 == x3 or x1 == x3) and (y1 == y2 or y2 == y3 or y1 == y3):
+#                max_area = max(max_area, area(x1, y1, x2, y2, x3, y3))
